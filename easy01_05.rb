@@ -13,12 +13,12 @@
 
 def reverse_sentence(string)
   yoda = string.split(" ")
-  yoda.each_with_index do |str, idx| 
-  end
-  p yoda
+  yoda.reverse!
+  yoda.join(' ')
 end
- reverse_sentence('    ')
-# puts reverse_sentence('Hello World')
-# puts reverse_sentence('Reverse these words')
-# puts reverse_sentence('')
-# puts reverse_sentence('    ')
+
+puts reverse_sentence('Hello World')
+puts reverse_sentence('Reverse these words')
+puts reverse_sentence('Four score and seven years ago')
+puts reverse_sentence('')
+puts reverse_sentence('    ')
