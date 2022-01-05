@@ -20,4 +20,16 @@ length = gets.chomp.to_f
 puts "Enter the width of the room in meters:"
 width = gets.chomp.to_f
 
-puts "The area of the room is #{length * width} square meters (#{(length * width) * 10.7639 } square feet)."
+puts "The area of the room is #{length * width} square meters & (#{(length * width) * 10.7639 } square feet)."
+
+# Further Exploration
+
+# Modify this program to ask for the input measurements in feet, and display the results in square feet, square inches, and square centimeters.
+
+puts "Enter the length of the room in feet:"
+length = gets.chomp.to_f
+
+puts "Enter the width of the room in feet:"
+width = gets.chomp.to_f
+
+puts "The area of the room is #{length * width} square feet #{length * width * 144} square inches, & #{length * width * 929.03} square centimeters."
