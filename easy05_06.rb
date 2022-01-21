@@ -33,11 +33,13 @@
 
 def word_sizes(string)
   count = Hash.new
+
   string.split.each do |substring|
     if substring.size > 0 
       count[substring.size] == nil ? count[substring.size] = 1 : count[substring.size] += 1
     end
   end
+  
   count
 end
 
