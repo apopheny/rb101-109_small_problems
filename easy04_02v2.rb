@@ -16,41 +16,30 @@
 # century(1052) == '11th'
 # century(1127) == '12th'
 # century(11201) == '113th'
+require 'pry'
+require 'pry-byebug'
 
-WORK IN PROGRESS
-def special_cases(int)
-  outliers = [11, 12, 13]
-  outliers.include?(int)
+def suffix(int)
+  if (int % 10 == 1) && (int % 100 != 11)
+    "st"
+  elsif (int % 10 == 2) && (int % 100 != 12)
+    "nd"
+  elsif (int % 10 == 3) && (int % 100 != 13)
+    "rd"
+  else
+    "th"
+  end
 end
+# 1st 11th 21st
+# 2nd 12th 22nd
+# 3rd 13th 23rd
+# 4th 14th 24th
+# 5th 15th 25th
 
 def century(int)
-
+(int % 100 == 0) ? (cent = (int / 100)) : (cent = ((int / 100) + 1)) 
+  "#{cent.to_s + suffix(cent)}"
 end
-
-1st 
-2nd 
-3rd 
-4th
-5th
-6th
-7th
-8th
-9th
-10th
-
-## 11th
-## 12th
-## 13th
-14th
-15th
-16th
-17th
-18th
-19th
-20th
-
-
-
 
 p century(2000) == '20th'
 p century(2001) == '21st'
