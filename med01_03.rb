@@ -26,8 +26,13 @@ def max_rotation(int)
   dup = int.dup
   loop do
     int = rotate_rightmost_digits(int, counter)
-    dup.to_s.size - int.to_s.size > 0) ? counter = 0 : counter -= 1
-  break if counter + int.to_s.size == 0
+    counter -= 1
+    if counter + int.to_s.size == 0 || dup.to_s.size - int.to_s.size > 0
+      break
+    end
+  end
+  if dup.to_s.size - int.to_s.size > 0
+    int = max_rotation(int)
   end
   int
 end
